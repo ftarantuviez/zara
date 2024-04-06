@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 
 export type AlertType = "error" | "warning" | "info" | "success";
 
@@ -11,5 +11,3 @@ export type OpenAlertInput = Readonly<{
 export const AlertContext = createContext<(input?: OpenAlertInput) => void>(
   () => {}
 );
-
-export const useAlert = () => useContext(AlertContext);

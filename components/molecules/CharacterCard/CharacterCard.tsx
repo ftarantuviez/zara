@@ -1,9 +1,13 @@
+"use client";
 import clsx from "clsx";
 import Image from "next/image";
 import React, { FunctionComponent, useMemo } from "react";
 import "./styles.css";
 import { LikeButton, Text } from "@/components";
 import { Character } from "@/types";
+import { useOnClickLikeCharacter } from "@/hooks";
+import { trucateString } from "@/utils";
+import Link from "next/link";
 
 export type CharacterCardProps = Readonly<{
   /**
@@ -20,6 +24,7 @@ export const CharacterCard: FunctionComponent<CharacterCardProps> = ({
   className,
   character,
 }) => {
+  const onClickLike = useOnClickLikeCharacter();
   const classNames = useMemo(
     () => clsx("characterCard", className),
     [className]
@@ -33,13 +38,27 @@ export const CharacterCard: FunctionComponent<CharacterCardProps> = ({
 
   return (
     <div className={classNames}>
-      <Image src={thumbnail} alt="" height={180} width={180} />
+      <Link href={`/character/${character.id}`} style={{ height: 180 }}>
+        <Image
+          src={thumbnail}
+          alt={character.name ?? "Marvel"}
+          height={180}
+          width={180}
+        />
+      </Link>
 
       <div className="characterCard__separator" />
 
       <div className="characterCard__info">
-        <Text color="white">{character.name ?? "Unknown Character"}</Text>
-        <LikeButton />
+        <Link href={`/character/${character.id}`}>
+          <Text color="white">
+            {trucateString(character.name ?? "Unknown")}
+          </Text>
+        </Link>
+        <LikeButton
+          onClick={() => onClickLike(character.id)}
+          isLiked={character.isLiked}
+        />
         <div className="characterCard__triangle" />
       </div>
     </div>

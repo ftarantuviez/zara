@@ -70,17 +70,17 @@ export interface CharacterDataContainer {
   /**
    * The list of characters returned by the call.
    */
-  readonly results?: Character[];
+  readonly results?: CharacterApi[];
 }
 
 /**
  * Represents a character object.
  */
-export interface Character {
+export interface CharacterApi {
   /**
    * The unique ID of the character resource.
    */
-  readonly id?: number;
+  readonly id: number;
 
   /**
    * The name of the character.
@@ -131,4 +131,11 @@ export interface Character {
    * A resource list of series in which this character appears.
    */
   readonly series?: SeriesList;
+}
+
+export interface Character extends CharacterApi {
+  /**
+   * Have the user liked this character?
+   */
+  isLiked?: boolean;
 }

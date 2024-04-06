@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import "./styles.css";
-import { SearchInput, CharacterCard, Text, Alert } from "@/components";
+import { SearchInput, CharacterCard, Text } from "@/components";
 import { useCharactersContext } from "@/contexts";
 
 type Props = Readonly<{}>;
