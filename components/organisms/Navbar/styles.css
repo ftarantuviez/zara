@@ -1,0 +1,19 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--p-5);
+  background: var(--black-main);
+}
+
+.navbar__favoriteSection {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-2);
+}
+
+.navbar__heartIcon {
+  width: var(--w-5);
+  height: var(--h-5);
+}

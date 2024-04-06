@@ -1,0 +1,45 @@
+.text {
+  font-family: var(--font-main);
+}
+
+/* Start Section: Variants */
+
+.variant-body1 {
+  font-size: var(--text-main);
+}
+.variant-body2 {
+  font-size: var(--text-sm);
+}
+
+.variant-h6 {
+  font-size: var(--text-lg);
+}
+.variant-h5 {
+  font-size: var(--text-xl);
+}
+.variant-h4 {
+  font-size: var(--text-2xl);
+}
+.variant-h3 {
+  font-size: var(--text-3xl);
+}
+.variant-h2 {
+  font-size: var(--text-4xl);
+}
+.variant-h1 {
+  font-size: var(--text-5xl);
+}
+
+/* End Section: Variants */
+
+/* Start Section: Colors */
+
+.color-black {
+  color: var(--black-main);
+}
+
+.color-white {
+  color: var(--white-main);
+}
+
+/* End Section: Colors */
