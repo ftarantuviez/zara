@@ -1,0 +1,26 @@
+.snackbar {
+  position: fixed;
+}
+
+.snackbar-top-left {
+  top: 12px;
+  left: 12px;
+}
+.snackbar-top-right {
+  top: 12px;
+  right: 12px;
+}
+.snackbar-bottom-right {
+  bottom: 12px;
+  right: 12px;
+}
+.snackbar-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+
+.snackbar__closeButton {
+  position: absolute;
+  right: 8px;
+  top: 12px;
+}

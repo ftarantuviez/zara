@@ -6,22 +6,22 @@ export interface StoryList {
    * The number of total available stories in this list.
    * Will always be greater than or equal to the "returned" value.
    */
-  available?: number;
+  readonly available?: number;
 
   /**
    * The number of stories returned in this collection (up to 20).
    */
-  returned?: number;
+  readonly returned?: number;
 
   /**
    * The path to the full list of stories in this collection.
    */
-  collectionURI?: string;
+  readonly collectionURI?: string;
 
   /**
    * The list of returned stories in this collection.
    */
-  items?: StorySummary[];
+  readonly items?: StorySummary[];
 }
 
 /**
@@ -31,15 +31,15 @@ export interface StorySummary {
   /**
    * The path to the individual story resource.
    */
-  resourceURI?: string;
+  readonly resourceURI?: string;
 
   /**
    * The canonical name of the story.
    */
-  name?: string;
+  readonly name?: string;
 
   /**
    * The type of the story (interior or cover).
    */
-  type?: string;
+  readonly type?: string;
 }

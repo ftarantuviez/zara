@@ -6,22 +6,22 @@ export interface SeriesList {
    * The number of total available series in this list.
    * Will always be greater than or equal to the "returned" value.
    */
-  available?: number;
+  readonly available?: number;
 
   /**
    * The number of series returned in this collection (up to 20).
    */
-  returned?: number;
+  readonly returned?: number;
 
   /**
    * The path to the full list of series in this collection.
    */
-  collectionURI?: string;
+  readonly collectionURI?: string;
 
   /**
    * The list of returned series in this collection.
    */
-  items?: SeriesSummary[];
+  readonly items?: SeriesSummary[];
 }
 
 /**
@@ -31,10 +31,10 @@ export interface SeriesSummary {
   /**
    * The path to the individual series resource.
    */
-  resourceURI?: string;
+  readonly resourceURI?: string;
 
   /**
    * The canonical name of the series.
    */
-  name?: string;
+  readonly name?: string;
 }

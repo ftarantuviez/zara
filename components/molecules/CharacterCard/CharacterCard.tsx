@@ -6,7 +6,13 @@ import { LikeButton, Text } from "@/components";
 import { Character } from "@/types";
 
 export type CharacterCardProps = Readonly<{
+  /**
+   * Custom className for card
+   */
   className?: string;
+  /**
+   * Character information. It will be displayed in the card
+   */
   character: Character;
 }>;
 
@@ -20,14 +26,12 @@ export const CharacterCard: FunctionComponent<CharacterCardProps> = ({
   );
   return (
     <div className={classNames}>
-      <div className="characterCard__image">
-        <Image
-          src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"
-          alt=""
-          layout="fill"
-          objectFit="contain"
-        />
-      </div>
+      <Image
+        src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"
+        alt=""
+        height={180}
+        width={180}
+      />
 
       <div className="characterCard__separator" />
 

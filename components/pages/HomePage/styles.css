@@ -1,0 +1,22 @@
+.homePage {
+  padding: var(--p-20) var(--p-28);
+}
+
+.homePage__search {
+  margin-bottom: var(--m-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3);
+}
+
+.homePage__itemsContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for desktop */
+  gap: var(--gap-3);
+}
+
+@media screen and (max-width: 768px) {
+  .homePage__itemsContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}

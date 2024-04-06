@@ -5,12 +5,12 @@ export interface Url {
   /**
    * A text identifier for the URL.
    */
-  type?: string;
+  readonly type?: string;
 
   /**
    * A full URL (including scheme, domain, and path).
    */
-  url?: string;
+  readonly url?: string;
 }
 
 /**
@@ -20,10 +20,15 @@ export interface Image {
   /**
    * The directory path of to the image.
    */
-  path?: string;
+  readonly path?: string;
 
   /**
    * The file extension for the image.
    */
-  extension?: string;
+  readonly extension?: string;
 }
+
+/**
+ * Utility type to create a type where all properties are writable.
+ */
+export type Writable<T> = { -readonly [P in keyof T]: T[P] };

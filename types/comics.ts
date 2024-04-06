@@ -6,22 +6,22 @@ export interface ComicList {
    * The number of total available issues in this list.
    * Will always be greater than or equal to the "returned" value.
    */
-  available?: number;
+  readonly available?: number;
 
   /**
    * The number of issues returned in this collection (up to 20).
    */
-  returned?: number;
+  readonly returned?: number;
 
   /**
    * The path to the full list of issues in this collection.
    */
-  collectionURI?: string;
+  readonly collectionURI?: string;
 
   /**
    * The list of returned issues in this collection.
    */
-  items?: ComicSummary[];
+  readonly items?: ComicSummary[];
 }
 
 /**
@@ -31,10 +31,10 @@ export interface ComicSummary {
   /**
    * The path to the individual comic resource.
    */
-  resourceURI?: string;
+  readonly resourceURI?: string;
 
   /**
    * The canonical name of the comic.
    */
-  name?: string;
+  readonly name?: string;
 }
