@@ -24,14 +24,16 @@ export const CharacterCard: FunctionComponent<CharacterCardProps> = ({
     () => clsx("characterCard", className),
     [className]
   );
+
+  const thumbnail = useMemo(() => {
+    if (!character.thumbnail) return "No Image Found";
+
+    return `${character.thumbnail.path}.${character.thumbnail.extension}`;
+  }, [character]);
+
   return (
     <div className={classNames}>
-      <Image
-        src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"
-        alt=""
-        height={180}
-        width={180}
-      />
+      <Image src={thumbnail} alt="" height={180} width={180} />
 
       <div className="characterCard__separator" />
 

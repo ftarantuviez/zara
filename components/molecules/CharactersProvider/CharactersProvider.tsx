@@ -1,7 +1,7 @@
 "use client";
 import client from "@/client/client";
 import { CharactersContext, useAlert } from "@/contexts";
-import { Character, Error } from "@/types";
+import { Character, CharacterDataWrapper, Error } from "@/types";
 import React, {
   FunctionComponent,
   PropsWithChildren,
@@ -20,13 +20,19 @@ export const CharactersProvider: FunctionComponent<PropsWithChildren> = ({
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await client.get("/public/characters");
-        console.log(data);
+        setIsLoading(true);
+        const { data } = await client.get<CharacterDataWrapper>(
+          "/public/characters?limit=50"
+        );
+
+        setCharacters(data.data?.results ?? []);
+        setIsLoading(false);
       } catch (error) {
-        /* openAlert({
+        setIsLoading(false);
+        openAlert({
           type: "error",
           message: "We couldn't fetch characters. Please try again later.",
-        }); */
+        });
       }
     })();
   }, [openAlert]);

@@ -3,11 +3,20 @@ import { AlertContext, OpenAlertInput } from "@/contexts";
 import { Alert, Snackbar } from "..";
 import React, { FC, PropsWithChildren, useState, useCallback } from "react";
 
-type InternalAlertManagerProps = {
+type InternalAlertManagerProps = Readonly<{
+  /**
+   * Components inside of this provider
+   */
   children: React.ReactNode;
+  /**
+   * If `true`, alerts popups
+   */
   isOpen?: boolean;
+  /**
+   * Information for alert
+   */
   data?: OpenAlertInput;
-};
+}>;
 const InternalAlertManager: FC<InternalAlertManagerProps> = ({
   children,
   isOpen,
@@ -17,12 +26,7 @@ const InternalAlertManager: FC<InternalAlertManagerProps> = ({
     <React.Fragment>
       {children}
       <Snackbar open={isOpen}>
-        <Alert
-          title={data?.title}
-          message={data?.message}
-          type={data?.type}
-          className="max-w-[500px]"
-        />
+        <Alert title={data?.title} message={data?.message} type={data?.type} />
       </Snackbar>
     </React.Fragment>
   );
