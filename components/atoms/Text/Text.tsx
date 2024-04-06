@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import "./styles.css";
 
 export interface TextProps
@@ -30,11 +30,9 @@ export const Text: FC<TextProps> = ({
   color = "black",
   ...rest
 }) => {
-  const classNames = clsx(
-    "text",
-    `variant-${variant}`,
-    `color-${color}`,
-    className
+  const classNames = useMemo(
+    () => clsx("text", `variant-${variant}`, `color-${color}`, className),
+    [className, color, variant]
   );
 
   return (

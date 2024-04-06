@@ -1,0 +1,20 @@
+.searchInput {
+  display: flex;
+  align-items: center;
+  padding: var(--p-2);
+  border-bottom: 1px solid var(--black-main);
+}
+
+.searchInput-fullWidth {
+  width: var(--w-full);
+}
+
+.searchInput__icon {
+  border: none;
+  background: none;
+}
+
+.searchInput__input {
+  border-bottom: none;
+  padding: none;
+}

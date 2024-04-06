@@ -1,0 +1,17 @@
+.input {
+  border: none;
+  border-bottom: 1px solid var(--black-main);
+  background: none;
+  outline: none;
+  padding: var(--p-2);
+  font-size: var(--text-main);
+}
+
+.input::placeholder {
+  text-transform: uppercase;
+  color: var(--gray-main);
+}
+
+.input-fullWidth {
+  width: var(--w-full);
+}

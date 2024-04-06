@@ -1,0 +1,38 @@
+.characterCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.characterCard__image {
+  height: var(--h-48);
+  width: var(--h-48);
+}
+
+.characterCard__separator {
+  padding: var(--p-8);
+  width: var(--w-full);
+  background-color: var(--red-main);
+}
+
+.characterCard__info {
+  background-color: var(--black-main);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--p-4);
+  position: relative;
+}
+
+.characterCard__triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 35px solid var(--white-main);
+  transform: rotate(15deg);
+  right: -15px;
+  bottom: -20px;
+  position: absolute;
+}

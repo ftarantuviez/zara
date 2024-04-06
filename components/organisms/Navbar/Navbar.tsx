@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import "./styles.css";
 import clsx from "clsx";
 import Image from "next/image";
@@ -11,8 +11,9 @@ type NavbarProps = Readonly<{
 }>;
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
+  const classNames = useMemo(() => clsx("navbar", className), [className]);
   return (
-    <div className={clsx("navbar", className)}>
+    <div className={classNames}>
       <Link href="/">
         <Image
           src="/svg/marvel-logo.svg"

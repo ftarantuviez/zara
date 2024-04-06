@@ -5,6 +5,7 @@
   --red-main: #ec1d24;
   --black-main: #000;
   --white-main: #fff;
+  --gray-main: #aaa;
 
   /* Variables: Font Family */
   --font-main: "Roboto Condensed", sans-serif;
@@ -60,6 +61,15 @@
   --w-16: 4rem; /* 64px */
   --w-20: 5rem; /* 80px */
   --w-24: 6rem; /* 96px */
+  --w-28: 7rem; /* 112px */
+  --w-32: 8rem; /* 128px */
+  --w-36: 9rem; /* 144px */
+  --w-40: 10rem; /* 160px */
+  --w-44: 11rem; /* 176px */
+  --w-48: 12rem; /* 192px */
+  --w-52: 13rem; /* 208px */
+  --w-full: 100%;
+  --w-screen: 100vw;
 
   /* Variables: Height */
   --h-0: 0px;
@@ -80,6 +90,15 @@
   --h-16: 4rem; /* 64px */
   --h-20: 5rem; /* 80px */
   --h-24: 6rem; /* 96px */
+  --h-28: 7rem; /* 112px */
+  --h-32: 8rem; /* 128px */
+  --h-36: 9rem; /* 144px */
+  --h-40: 10rem; /* 160px */
+  --h-44: 11rem; /* 176px */
+  --h-48: 12rem; /* 192px */
+  --h-52: 13rem; /* 208px */
+  --h-full: 100%;
+  --h-screen: 100vh;
 
   /* Variables: Gap */
   --gap-1: 0.25rem; /* 4px */
@@ -95,11 +114,15 @@
 
 html,
 body {
-  max-width: 100vw;
+  max-width: var(--w-screen);
   overflow-x: hidden;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }

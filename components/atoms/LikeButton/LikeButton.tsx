@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import "./styles.css";
 import { EmptyHeartIcon, FilledHeartIcon } from "@/assets";
 import clsx from "clsx";
@@ -8,6 +8,11 @@ export interface LikeButtonProps
     React.HTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
+  /**
+   * Value to check if button is liked or not. In case is *true*, is rendered a red heart.
+   *
+   * Default: false
+   */
   isLiked?: Readonly<boolean>;
 }
 
@@ -16,7 +21,7 @@ export const LikeButton: FunctionComponent<LikeButtonProps> = ({
   className,
   ...rest
 }) => {
-  const classNames = clsx("likeButton", className);
+  const classNames = useMemo(() => clsx("likeButton", className), [className]);
   return (
     <button className={classNames} {...rest}>
       {isLiked ? <FilledHeartIcon /> : <EmptyHeartIcon />}
