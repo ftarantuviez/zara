@@ -1,4 +1,7 @@
 "use client";
+import { SearchInput, Text, CharacterCard } from "@/components";
+import { useCharactersContext } from "@/contexts";
+import { Character } from "@/types";
 import React, {
   FunctionComponent,
   useCallback,
@@ -6,13 +9,14 @@ import React, {
   useState,
 } from "react";
 import "./styles.css";
-import { SearchInput, CharacterCard, Text } from "@/components";
-import { useCharactersContext } from "@/contexts";
 
-type Props = Readonly<{}>;
+type Props = {
+  characters: Character[];
+};
 
-export const HomePage: FunctionComponent<Props> = () => {
-  const { characters } = useCharactersContext();
+export const CharactersGridWithSearch: FunctionComponent<Props> = ({
+  characters,
+}) => {
   const [query, setQuery] = useState<string>("");
 
   const onQueryChange = useCallback(
@@ -25,9 +29,10 @@ export const HomePage: FunctionComponent<Props> = () => {
       char.name?.toLowerCase().includes(query.toLowerCase())
     );
   }, [characters, query]);
+
   return (
-    <main className="homePage">
-      <div className="homePage__search">
+    <div className="characters">
+      <div className="characters__search">
         <SearchInput
           placeholder="Search a character..."
           value={query}
@@ -37,13 +42,13 @@ export const HomePage: FunctionComponent<Props> = () => {
         <Text variant="body2">{charactersToShow.length} RESULTS</Text>
       </div>
 
-      <div className="homePage__itemsContainer">
+      <div className="characters__itemsContainer">
         {charactersToShow.map((char) => (
-          <div className="homePage__itemsContainer--item" key={char.id}>
+          <div className="characters__itemsContainer--item" key={char.id}>
             <CharacterCard character={char} />
           </div>
         ))}
       </div>
-    </main>
+    </div>
   );
 };

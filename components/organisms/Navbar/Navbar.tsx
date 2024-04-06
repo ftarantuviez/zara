@@ -17,7 +17,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   const classNames = useMemo(() => clsx("navbar", className), [className]);
 
   const likedCharactersCount = useMemo(
-    () => characters.filter((c) => c.isLiked).length + 1,
+    () => characters.filter((c) => c.isLiked).length,
     [characters]
   );
 

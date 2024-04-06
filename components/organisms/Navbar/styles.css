@@ -5,6 +5,9 @@
   align-items: center;
   padding: var(--p-5);
   background: var(--black-main);
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 .navbar__favoriteSection {
