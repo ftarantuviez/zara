@@ -13,18 +13,29 @@ export interface LikeButtonProps
    *
    * Default: false
    */
-  isLiked?: Readonly<boolean>;
+  readonly isLiked?: boolean;
+  /**
+   * Value to check if button is liked or not. In case is *true*, is rendered a red heart.
+   *
+   * Default: false
+   */
+  readonly iconClassName?: string;
 }
 
 export const LikeButton: FunctionComponent<LikeButtonProps> = ({
   isLiked,
   className,
+  iconClassName,
   ...rest
 }) => {
   const classNames = useMemo(() => clsx("likeButton", className), [className]);
   return (
     <button className={classNames} {...rest}>
-      {isLiked ? <FilledHeartIcon /> : <EmptyHeartIcon />}
+      {isLiked ? (
+        <FilledHeartIcon className={iconClassName} />
+      ) : (
+        <EmptyHeartIcon className={iconClassName} />
+      )}
     </button>
   );
 };

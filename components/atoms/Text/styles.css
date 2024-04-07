@@ -6,6 +6,7 @@
 
 .variant-body1 {
   font-size: var(--text-main);
+  line-height: 25px;
 }
 .variant-body2 {
   font-size: var(--text-sm);
@@ -25,9 +26,11 @@
 }
 .variant-h2 {
   font-size: var(--text-4xl);
+  font-weight: 600;
 }
 .variant-h1 {
   font-size: var(--text-5xl);
+  font-weight: 700;
 }
 
 /* End Section: Variants */

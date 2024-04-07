@@ -1,0 +1,11 @@
+.characterPage {
+  width: var(--w-full);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.characterPage__cont {
+  width: 65%;
+  padding: var(--p-16) 0;
+}

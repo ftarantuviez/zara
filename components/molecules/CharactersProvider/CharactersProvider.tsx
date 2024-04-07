@@ -27,7 +27,7 @@ export const CharactersProvider: FunctionComponent<PropsWithChildren> = ({
   const openAlert = useAlert();
   const [characters, setCharacters] = useState<Character[]>([]);
   const [error] = useState<Error>({ isError: false, message: "" });
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     (async () => {

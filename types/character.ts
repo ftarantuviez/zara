@@ -133,6 +133,46 @@ export interface CharacterApi {
   readonly series?: SeriesList;
 }
 
+/**
+ * Represents a summary of a character.
+ */
+export interface CharacterSummary {
+  /**
+   * The path to the individual character resource.
+   */
+  resourceURI?: string;
+  /**
+   * The full name of the character.
+   */
+  name?: string;
+  /**
+   * The role of the creator in the parent entity.
+   */
+  role?: string;
+}
+
+/**
+ * Represents a list of characters.
+ */
+export interface CharacterList {
+  /**
+   * The number of total available characters in this list. Will always be greater than or equal to the "returned" value.
+   */
+  available?: number;
+  /**
+   * The number of characters returned in this collection (up to 20).
+   */
+  returned?: number;
+  /**
+   * The path to the full list of characters in this collection.
+   */
+  collectionURI?: string;
+  /**
+   * The list of returned characters in this collection.
+   */
+  items?: CharacterSummary[];
+}
+
 export interface Character extends CharacterApi {
   /**
    * Have the user liked this character?

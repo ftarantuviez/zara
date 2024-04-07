@@ -1,0 +1,40 @@
+.comicsGrid {
+  width: var(--w-full);
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  gap: var(--gap-5);
+  padding: var(--p-5) 0;
+}
+
+.comicsGrid::-webkit-scrollbar {
+  height: var(--h-2);
+}
+
+.comicsGrid::-webkit-scrollbar-track {
+  background-color: var(--gray-100);
+}
+
+.comicsGrid::-webkit-scrollbar-thumb {
+  background-color: var(--red-main);
+  border-radius: 6px;
+}
+
+.comicsGrid__card {
+  width: 25vw;
+  text-align: left;
+}
+
+.comicsGrid__image {
+  object-fit: contain;
+}
+
+.comicsGrid__title {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: var(--m-1);
+}
+
+.comicsGrid__year {
+  color: var(--gray-500);
+}

@@ -1,6 +1,5 @@
 "use client";
 import { SearchInput, Text, CharacterCard } from "@/components";
-import { useCharactersContext } from "@/contexts";
 import { Character } from "@/types";
 import React, {
   FunctionComponent,
@@ -42,13 +41,18 @@ export const CharactersGridWithSearch: FunctionComponent<Props> = ({
         <Text variant="body2">{charactersToShow.length} RESULTS</Text>
       </div>
 
-      <div className="characters__itemsContainer">
-        {charactersToShow.map((char) => (
-          <div className="characters__itemsContainer--item" key={char.id}>
-            <CharacterCard character={char} />
-          </div>
-        ))}
-      </div>
+      {charactersToShow.length === 0 && (
+        <Text variant="h3">No results containing: {query}</Text>
+      )}
+      {charactersToShow.length > 0 && (
+        <div className="characters__itemsContainer">
+          {charactersToShow.map((char) => (
+            <div className="characters__itemsContainer--item" key={char.id}>
+              <CharacterCard character={char} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

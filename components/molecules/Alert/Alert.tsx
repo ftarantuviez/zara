@@ -2,7 +2,7 @@ import { Text } from "@/components";
 import { AlertType } from "@/contexts";
 import clsx from "clsx";
 import React, { FunctionComponent, useMemo } from "react";
-import { MdError, MdWarning, MdInfo, MdCheck, MdClose } from "react-icons/md";
+import { MdError, MdWarning, MdInfo, MdCheck } from "react-icons/md";
 import "./styles.css";
 
 type Props = Readonly<{

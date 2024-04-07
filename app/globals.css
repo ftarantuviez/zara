@@ -8,6 +8,8 @@
   --red-main: #ec1d24;
   --black-main: #000;
   --white-main: #fff;
+  --gray-100: #f1f5f9;
+  --gray-500: #6b7280;
   --gray-main: #aaa;
 
   /* Variables: Font Family */
@@ -128,6 +130,16 @@
   --gap-1: 0.25rem; /* 4px */
   --gap-2: 0.5rem; /* 8px */
   --gap-3: 0.75rem; /* 12px */
+  --gap-4: 1rem; /* 16px */
+  --gap-5: 1.25rem; /* 20px */
+  --gap-6: 1.5rem; /* 24px */
+  --gap-6: 1.5rem; /* 24px */
+  --gap-7: 1.75rem; /* 28px */
+  --gap-8: 2rem; /* 32px */
+  --gap-9: 2.25rem; /* 36px */
+  --gap-10: 2.5rem; /* 40px */
+  --gap-11: 2.75rem; /* 44px */
+  --gap-12: 3rem; /* 48px */
 }
 
 * {
