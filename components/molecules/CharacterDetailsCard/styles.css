@@ -24,6 +24,7 @@
 .characterDetails__icon {
   width: var(--w-7);
   height: var(--h-7);
+  margin-left: var(--m-5);
 }
 
 .characterDetails__desc {

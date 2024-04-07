@@ -6,7 +6,12 @@ import { FunctionComponent, useEffect, useMemo, useState } from "react";
 import "./styles.css";
 import { Comic, ComicDataWrapper } from "@/types";
 import client from "@/config/client";
-import { CharacterDetailsCard, ComicsGrid, Text } from "@/components";
+import {
+  CharacterDetailsCard,
+  ComicsGrid,
+  LoadingScreen,
+  Text,
+} from "@/components";
 
 const sortByFocDates = (a: Comic, b: Comic): number => {
   const date1 = new Date(
@@ -21,7 +26,7 @@ const sortByFocDates = (a: Comic, b: Comic): number => {
 
 const Character: FunctionComponent = () => {
   const { id } = useParams();
-  const { characters } = useCharactersContext();
+  const { characters, isLoading } = useCharactersContext();
   const [loadingComics, setLoadingComics] = useState(false);
   const [comics, setComics] = useState<Comic[]>([]);
 
@@ -31,12 +36,12 @@ const Character: FunctionComponent = () => {
   );
 
   useEffect(() => {
-    if (character) {
+    if (id) {
       (async () => {
         try {
           setLoadingComics(true);
           const { data } = await client.get<ComicDataWrapper>(
-            `/public/characters/${character.id}/comics?limit=20`
+            `/public/characters/${id}/comics?limit=20`
           );
           setLoadingComics(false);
           setComics(data.data?.results ?? []);
@@ -45,12 +50,13 @@ const Character: FunctionComponent = () => {
         }
       })();
     }
-  }, [character]);
+  }, [id]);
 
   const sortedComics = useMemo(() => {
     return comics.sort(sortByFocDates);
   }, [comics]);
 
+  if (isLoading) return <LoadingScreen />;
   if (!character) return <Text variant="h2">Character not found</Text>;
   return (
     <div className="characterPage">

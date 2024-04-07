@@ -8,6 +8,16 @@ type Props = {
   readonly comics: Comic[];
 };
 
+const getLaunchDate = (c: Comic): string => {
+  const date = c.dates?.find((d) => d.type === "focDate");
+
+  if (!date || !date.date) return "XXXX";
+
+  const fullYear = new Date(date.date).getFullYear();
+  if (isNaN(fullYear)) return "XXXX";
+
+  return String(fullYear);
+};
 export const ComicsGrid: FC<Props> = ({ comics }) => {
   return (
     <div className="comicsGrid">
@@ -24,7 +34,7 @@ export const ComicsGrid: FC<Props> = ({ comics }) => {
             {comic.title}
           </Text>
           <Text className="comicsGrid__year" variant="body2">
-            {new Date(comic.dates?.[0]?.date ?? "").getFullYear()}
+            {getLaunchDate(comic)}
           </Text>
         </div>
       ))}
