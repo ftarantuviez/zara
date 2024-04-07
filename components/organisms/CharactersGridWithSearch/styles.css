@@ -11,8 +11,32 @@
   gap: var(--gap-3);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 380px) {
+  .characters__itemsContainer {
+    grid-template-columns: repeat(1, 1fr); /* 1 column for smaller screens */
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 768px) {
   .characters__itemsContainer {
     grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 940px) {
+  .characters__itemsContainer {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+  }
+}
+
+@media screen and (min-width: 940px) and (max-width: 1280px) {
+  .characters__itemsContainer {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for tablets */
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1400px) {
+  .characters__itemsContainer {
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for tablets */
   }
 }

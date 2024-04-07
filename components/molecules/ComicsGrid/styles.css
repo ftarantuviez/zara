@@ -1,7 +1,6 @@
 .comicsGrid {
   width: var(--w-full);
   display: flex;
-  align-items: center;
   overflow-x: scroll;
   gap: var(--gap-5);
   padding: var(--p-5) 0;
@@ -21,12 +20,13 @@
 }
 
 .comicsGrid__card {
-  width: 25vw;
   text-align: left;
 }
 
-.comicsGrid__image {
-  object-fit: contain;
+.comicsGrid__card--img {
+  width: 200px;
+  height: 400px;
+  position: relative;
 }
 
 .comicsGrid__title {

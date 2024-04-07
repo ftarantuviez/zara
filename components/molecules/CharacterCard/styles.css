@@ -2,13 +2,19 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  max-width: 180px;
+  height: 290px;
+  width: 100%;
+}
+
+.characterCard__img {
+  height: 75%;
 }
 
 .characterCard__separator {
   padding: var(--p-1);
   width: var(--w-full);
   background-color: var(--red-main);
+  height: 5%;
 }
 
 .characterCard__info {
@@ -19,6 +25,7 @@
   align-items: center;
   padding: var(--p-4);
   position: relative;
+  height: 20%;
 }
 
 .characterCard__triangle {

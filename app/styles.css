@@ -1,3 +1,21 @@
 .home {
   padding: var(--p-20) var(--p-28);
 }
+
+@media screen and (max-width: 380px) {
+  .home {
+    padding: var(--p-5);
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 768px) {
+  .home {
+    padding: var(--p-10);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .home {
+    padding: var(--p-20);
+  }
+}

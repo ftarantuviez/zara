@@ -23,11 +23,12 @@ export const CharacterDetailsCard: FunctionComponent<Props> = ({
   return (
     <div className="characterDetails" data-testid="characterDetails">
       <div className="characterDetails__cont">
-        <div className="characterDetails__image">
+        <div className="characterDetails__img">
           <Image
             src={thumbnail}
-            height="320"
-            width="320"
+            style={{ objectFit: "cover" }}
+            fill
+            sizes="290px"
             alt={character.name ?? "Character"}
           />
         </div>

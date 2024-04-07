@@ -38,12 +38,13 @@ export const CharacterCard: FunctionComponent<CharacterCardProps> = ({
 
   return (
     <div className={classNames} data-testid="characterCard">
-      <Link href={`/character/${character.id}`} style={{ height: 180 }}>
+      <Link href={`/character/${character.id}`} className="characterCard__img">
         <Image
           src={thumbnail}
           alt={character.name ?? "Marvel"}
-          height={180}
-          width={180}
+          fill
+          sizes="290px"
+          style={{ objectFit: "cover" }}
         />
       </Link>
 

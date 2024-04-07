@@ -6,7 +6,13 @@ import { Text } from "@/components";
 export const LoadingScreen: FunctionComponent = () => {
   return (
     <div className="loadingScreen">
-      <Image width="300" height="300" alt="Marvel" src="/svg/marvel-logo.svg" />
+      <Image
+        width="300"
+        height="300"
+        priority
+        alt="Marvel"
+        src="/svg/marvel-logo.svg"
+      />
       <Text color="white" variant="h3">
         Loading...
       </Text>

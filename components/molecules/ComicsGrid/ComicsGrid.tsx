@@ -23,13 +23,15 @@ export const ComicsGrid: FC<Props> = ({ comics }) => {
     <div className="comicsGrid">
       {comics?.map((comic) => (
         <div key={comic.id} className="comicsGrid__card">
-          <Image
-            src={comic.thumbnail?.path + "." + comic.thumbnail?.extension}
-            alt={comic.title ?? "Unknown Comic"}
-            height={400}
-            width={240}
-            className="comicsGrid__image"
-          />
+          <div className="comicsGrid__card--img">
+            <Image
+              src={comic.thumbnail?.path + "." + comic.thumbnail?.extension}
+              alt={comic.title ?? "Unknown Comic"}
+              fill
+              sizes="290px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <Text className="comicsGrid__title" variant="body2">
             {comic.title}
           </Text>

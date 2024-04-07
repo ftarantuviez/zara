@@ -9,3 +9,16 @@
   width: 65%;
   padding: var(--p-16) 0;
 }
+
+@media screen and (max-width: 768px) {
+  .characterPage__cont {
+    width: var(--w-full);
+    padding: var(--p-10);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .characterPage__cont {
+    width: 80%;
+  }
+}
