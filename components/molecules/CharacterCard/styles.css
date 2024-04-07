@@ -8,6 +8,7 @@
 
 .characterCard__img {
   height: 75%;
+  position: relative;
 }
 
 .characterCard__separator {
