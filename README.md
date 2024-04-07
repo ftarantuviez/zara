@@ -36,6 +36,10 @@ Welcome to the Marvel Characters App! This project is a React application built 
       <a href="#-getting-started">Getting Started</a>
     </li>
     <li>
+      🎮
+      <a href="#-testing">Testing</a>
+    </li>
+    <li>
       📝
       <a href="#-license">License</a>
     </li>
@@ -135,6 +139,21 @@ npm run dev
 Open http://localhost:3000 in your browser.
 
 
+## 🎮 Testing
+
+For testing purposes, a variety of tools are used in order to get the most robust app.
+
+**Techologies Used**
+
+* **Vitest** (v1.4.0)
+* **React Testing Library** (v14.2.2)
+* **msw** (v2.2.13)
+
+**Run Tests**
+
+```
+npm run test
+```
 
 ## 📝 License
 
