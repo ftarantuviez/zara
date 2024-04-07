@@ -1,3 +1,9 @@
 .mainLayout__content {
   margin-top: var(--m-24);
 }
+
+.mainLayout__error {
+  margin-top: var(--m-28);
+  display: flex;
+  justify-content: center;
+}

@@ -2,7 +2,7 @@
 import client from "@/config/client";
 import { LIKED_CHARACTERS } from "@/constants";
 import { CharactersContext } from "@/contexts";
-import { useAlert } from "@/hooks";
+
 import { Character, CharacterApi, CharacterDataWrapper, Error } from "@/types";
 import { getFromLocalStorage } from "@/utils";
 import React, {
@@ -24,9 +24,8 @@ const addLikesAttr = (
 export const CharactersProvider: FunctionComponent<PropsWithChildren> = ({
   children,
 }) => {
-  const openAlert = useAlert();
   const [characters, setCharacters] = useState<Character[]>([]);
-  const [error] = useState<Error>({ isError: false, message: "" });
+  const [error, setError] = useState<Error>({ isError: false, message: "" });
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -50,13 +49,13 @@ export const CharactersProvider: FunctionComponent<PropsWithChildren> = ({
         setCharacters(chars);
       } catch (error) {
         setIsLoading(false);
-        openAlert({
-          type: "error",
+        setError({
+          isError: true,
           message: "We couldn't fetch characters. Please try again later.",
         });
       }
     })();
-  }, [openAlert]);
+  }, []);
 
   return (
     <CharactersContext.Provider

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AlertProvider, CharactersProvider, MainLayout } from "@/components";
+import { CharactersProvider, MainLayout } from "@/components";
 
 export const metadata: Metadata = {
   title: "Marvel",
@@ -13,14 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <AlertProvider>
-      <CharactersProvider>
-        <html lang="en">
-          <body>
-            <MainLayout>{children}</MainLayout>
-          </body>
-        </html>
-      </CharactersProvider>
-    </AlertProvider>
+    <CharactersProvider>
+      <html lang="en">
+        <body>
+          <MainLayout>{children}</MainLayout>
+        </body>
+      </html>
+    </CharactersProvider>
   );
 }

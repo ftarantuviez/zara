@@ -22,7 +22,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   );
 
   return (
-    <div className={classNames}>
+    <div className={classNames} data-testid="navbar">
       <Link href="/">
         <Image
           src="/svg/marvel-logo.svg"

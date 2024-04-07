@@ -1,9 +1,10 @@
 import { Text } from "@/components";
-import { AlertType } from "@/contexts";
 import clsx from "clsx";
 import React, { FunctionComponent, useMemo } from "react";
 import { MdError, MdWarning, MdInfo, MdCheck } from "react-icons/md";
 import "./styles.css";
+
+export type AlertType = "error" | "warning" | "info" | "success";
 
 type Props = Readonly<{
   /**
@@ -44,13 +45,17 @@ export const Alert: FunctionComponent<Props> = ({
   }, [type]);
 
   return (
-    <div className={classNames}>
+    <div className={classNames} data-testid="alert">
       {icon}
 
-      {title && <Text className={textClassNames}>{title}</Text>}
-      <Text className={textClassNames} variant="body2">
-        {message}
-      </Text>
+      <div className="alert__content">
+        {title && (
+          <Text className={textClassNames} variant="h5">
+            {title}
+          </Text>
+        )}
+        <Text className={textClassNames}>{message}</Text>
+      </div>
     </div>
   );
 };
