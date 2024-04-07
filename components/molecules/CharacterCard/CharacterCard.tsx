@@ -37,7 +37,7 @@ export const CharacterCard: FunctionComponent<CharacterCardProps> = ({
   }, [character]);
 
   return (
-    <div className={classNames}>
+    <div className={classNames} data-testid="characterCard">
       <Link href={`/character/${character.id}`} style={{ height: 180 }}>
         <Image
           src={thumbnail}
@@ -58,6 +58,7 @@ export const CharacterCard: FunctionComponent<CharacterCardProps> = ({
         <LikeButton
           onClick={() => onClickLike(character.id)}
           isLiked={character.isLiked}
+          data-testid="characterCard-likeButton"
         />
         <div className="characterCard__triangle" />
       </div>
