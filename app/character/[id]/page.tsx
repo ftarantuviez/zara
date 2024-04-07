@@ -8,7 +8,7 @@ import { Comic, ComicDataWrapper } from "@/types";
 import client from "@/config/client";
 import { CharacterDetailsCard, ComicsGrid, Text } from "@/components";
 
-const sortByFocDates = (a: Readonly<Comic>, b: Readonly<Comic>): number => {
+const sortByFocDates = (a: Comic, b: Comic): number => {
   const date1 = new Date(
     a.dates?.find((d) => d.type === "focDate")?.date ?? ""
   );
@@ -19,12 +19,7 @@ const sortByFocDates = (a: Readonly<Comic>, b: Readonly<Comic>): number => {
   return date1.getTime() - date2.getTime();
 };
 
-type Props = Readonly<{
-  comics: string;
-}>;
-
-const Character: FunctionComponent<Props> = (props) => {
-  console.log(props);
+const Character: FunctionComponent = () => {
   const { id } = useParams();
   const { characters } = useCharactersContext();
   const [loadingComics, setLoadingComics] = useState(false);

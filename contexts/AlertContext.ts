@@ -8,6 +8,6 @@ export type OpenAlertInput = Readonly<{
   message?: string;
 }>;
 
-export const AlertContext = createContext<(input?: OpenAlertInput) => void>(
+export const AlertContext = createContext<(_?: OpenAlertInput) => void>(
   () => {}
 );
